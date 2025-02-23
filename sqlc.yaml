@@ -1,0 +1,15 @@
+
+version: "2"
+
+sql:
+  - engine: "sqlite"
+    schema: "db/schema.sql"
+    queries: "db/queries.sql"
+    name: "queries"
+
+codegen:
+  - go:
+      package: "db"
+      out: "internal/db"
+      # Emit JSON tags on struct fields
+      emit_json_tags: true
